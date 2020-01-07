@@ -25,6 +25,3 @@ Conclusions
 
 Group presentation based on group study after completing individual reports
 ===
-
-Groups will be assigned after completion of reports
-===
