@@ -55,3 +55,7 @@ Group presentation based on group study after completing individual reports
 Individual reports
 ===
 <p> https://docs.google.com/document/d/1h84wQDCaSqsadSoULQbxm3ILL0-jdxT487OXaQl4UL4/edit?usp=sharing <p>
+  
+Lable Set
+===
+<p> https://docs.google.com/spreadsheets/d/1kHGRQJ-vVPDPNuhW_Z7V7siMjs9Lap1a1YdTb487D1M/edit?usp=sharing <p>
