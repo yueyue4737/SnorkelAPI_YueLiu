@@ -55,8 +55,8 @@ print(tfidf_matrix.shape)
 
 # Program2: k-means clustering
 # task1: create a k-means clustering
-# k value: the mean
-km = KMeans(n_clusters=5)
+# k value: the mean, usually
+km = KMeans(n_clusters=2)
 km.fit(tfidf_matrix)
 clusters = km.labels_.tolist()
 cluster_df["cluster"] = clusters
@@ -69,7 +69,7 @@ similarity_distance = 1 - cosine_similarity(tfidf_matrix)
 mergings = linkage(similarity_distance, method='complete')
 # task2: ploting the dendrogram
 dendrogram_ = dendrogram(mergings,
-               labels=[x for x in cluster_df["title"]],
+               labels=[x for x in cluster_df["id"]],
                leaf_rotation=90,
                leaf_font_size=16,
 )
