@@ -3,7 +3,6 @@
 # Program Goal: preparing the dataset for the next few steps
 
 # import libraries
-import matplotlib as plt
 import numpy as np
 import pandas as pd
 import nltk
@@ -12,15 +11,27 @@ import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 #task1: narrow down the scale of the dataset
+# labeling set
 # set seed for the reproducibility
 np.random.seed(1)
-# read the dataset .tcv
+# read the dataset
+label_df = pd.read_csv("label.csv")
+# obeserve the dataset
+print(label_df.head(0)) # 7 columns: 0, Tweets, id, keyword, location, text, target
+print(len(label_df)) # 200 rows
+print(label_df.shape) # (200, 7)
+
+# trainging set
+# set seed for the reproducibility
+np.random.seed(1)
+# read the dataset
 train_df = pd.read_csv("train.csv")
 # obeserve the dataset
 print(train_df.head(0)) # 5 columns: id, keyword, location, text, target
 print(len(train_df)) # 7613 rows
 print(train_df.shape) # (7613, 5)
 
+# texting set
 # set seed for the reproducibility
 np.random.seed(2)
 # read the dataset .tcv
@@ -46,5 +57,7 @@ tfidf_vectorizer = TfidfVectorizer(max_df=0.8, max_features=200000,
                                  use_idf=True, tokenizer= tokenize_and_stem,
                                  ngram_range=(1,3))
 # fit and transform the vector with the Tweets
-tfidf_matrix = tfidf_vectorizer.fit_transform([x for x in train_df["text"]])
-print(tfidf_matrix.shape)
+tfidf_matrix_train = tfidf_vectorizer.fit_transform([x for x in train_df["text"]])
+print(tfidf_matrix_train.shape)
+tfidf_matrix_test = tfidf_vectorizer.fit_transform([x for x in test_df["text"]])
+print(tfidf_matrix_test.shape)
