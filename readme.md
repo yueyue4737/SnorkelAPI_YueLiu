@@ -1,4 +1,4 @@
-Mini Project2 Yue Liu
+Mini Project2 Sorkel
 ===
 
 Project Goal
@@ -22,9 +22,16 @@ Modular Design
 ===
 ![ALT Text](https://github.com/yueyue4737/newMiniProject2_YueLiu/blob/master/img/0.png)
 
+Introduction to the topic
+====
+<p> Unsupervised learning can be considered as a way to reduce the dimensions. Most of the unsupervised learning are a form of cluster analysis: some objects in the clusters are very similar while others are distinct. <p>
+<p> Weak supervision can successfully avoid it by using subject matter experts (SMEs). We can achieve weak supervision in three ways: (1) providing higher-level, less precise supervision; (2) giving cheaper, lower-quality supervision; (3) taking existing resources. <p>
+
 Summary of references
 ===
+<p> New Snorkel(Snorkelv0.9) has three important functions. The goal of snorkel is to finish the operations of practitioners in the training data.<p>
 ![ALT Text](https://github.com/yueyue4737/newMiniProject2_YueLiu/blob/master/img/1.png)
+<p>Snorkel can be used in two contrast applications: Natural Language & Images. Hancock, Braden et al. (2018) introduced the Babble Labble in natural language, a framework with semantic parser converting explanations into executable functions. While Varma Paroma et al. (2017) presented Coral, a paradigm is allowing users to write heuristics to label training data to interpret the raw pixels. <p>
 
 Analysis of results including pros and cons.  This may include duplicating results by running example SW or testing public SW.
 ===
