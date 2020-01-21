@@ -2,6 +2,7 @@
 # Copyright 2019 YueLiu liuyue2@bu.edu
 # Program Goal: labeling a small-scale dataset by Snorkel
 # labeling doc: https://snorkel.readthedocs.io/en/v0.9.3/packages/labeling.html
+# edition: comment task 2&3 in program 1, details are in the report
 
 # import libraries
 
@@ -26,24 +27,24 @@ print(train_df.head(0)) # 5 columns: id, keyword, location, text, target
 print(len(train_df)) # 7613 rows
 print(train_df.shape) # (7613, 5)
 
-#task2: define a function to stem and tokenization
-# tokenization into words
-# stemming into the roots words
-def tokenize_and_stem(text):
-    tokens = [word for text in nltk.sent_tokenize(text) for word in nltk.word_tokenize(text)]
-    filtered_tokens = [token for token in tokens if re.search('[a-zA-Z]', token)]
-    stems = [SnowballStemmer("english").stem(word) for word in filtered_tokens]
-    return stems
+# #task2: define a function to stem and tokenization
+# # tokenization into words
+# # stemming into the roots words
+# def tokenize_and_stem(text):
+#     tokens = [word for text in nltk.sent_tokenize(text) for word in nltk.word_tokenize(text)]
+#     filtered_tokens = [token for token in tokens if re.search('[a-zA-Z]', token)]
+#     stems = [SnowballStemmer("english").stem(word) for word in filtered_tokens]
+#     return stems
 
-#task3: fit transform into TfidfVectorizer
-# convert text into numbers
-tfidf_vectorizer = TfidfVectorizer(max_df=0.8, max_features=200000,
-                                 min_df=0.2, stop_words='english',
-                                 use_idf=True, tokenizer= tokenize_and_stem,
-                                 ngram_range=(1,3))
-# fit and transform the vector with the Tweets
-tfidf_matrix_train = tfidf_vectorizer.fit_transform([x for x in train_df["text"]])
-print(tfidf_matrix_train.shape)
+# #task3: fit transform into TfidfVectorizer
+# # convert text into numbers
+# tfidf_vectorizer = TfidfVectorizer(max_df=0.8, max_features=200000,
+#                                  min_df=0.2, stop_words='english',
+#                                  use_idf=True, tokenizer= tokenize_and_stem,
+#                                  ngram_range=(1,3))
+# # fit and transform the vector with the Tweets
+# tfidf_matrix_train = tfidf_vectorizer.fit_transform([x for x in train_df["text"]])
+# print(tfidf_matrix_train.shape)
 
 
 # Program 2: labeling API
